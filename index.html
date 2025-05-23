@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Scheduler</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <nav class="sidebar">
+            <h2>Class Scheduler</h2>
+            <p class="sidebar-welcome">Welcome back!</p>
+            <ul>
+                <li><a href="#" id="dashboard-link" class="active"><i class="fas fa-home"></i> Dashboard</a></li>
+                <li><a href="#" id="scheduler-link"><i class="fas fa-calendar-alt"></i> Class Schedule</a></li>
+                <li><a href="#" id="teachers-link"><i class="fas fa-chalkboard-teacher"></i> Faculty</a></li>
+                <li><a href="#" id="students-link"><i class="fas fa-user-graduate"></i> Students</a></li>
+                <li><a href="#" id="rooms-link"><i class="fas fa-door-open"></i> Rooms</a></li>
+                <li><a href="#" id="courses-link"><i class="fas fa-book"></i> Courses</a></li>
+                <li><a href="#" id="auto-generate-link"><i class="fas fa-magic"></i> Auto Generate Schedule</a></li>
+                <li><a href="#" id="instructor-schedule-link"><i class="fas fa-user-tie"></i> Instructor Schedule</a></li>
+                <li><a href="#" id="logout-link" style="color: #e74c3c;"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+            </ul>
+        </nav>
+        <main class="main-content" id="main-content">
+            <!-- Main content will be loaded here -->
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx@0.18.5/dist/xlsx.full.min.js"></script>
+    <script src="newscript.js"></script>
+    <script>
+        // Check if user is logged in
+        const token = localStorage.getItem('token');
+        if (!token) {
+            window.location.href = '/login.html';
+        }
+
+        // Add logout functionality
+        document.getElementById('logout-link').addEventListener('click', (e) => {
+            e.preventDefault();
+            localStorage.removeItem('token');
+            window.location.href = '/login.html';
+        });
+    </script>
+</body>
+</html> 
