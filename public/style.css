@@ -2046,14 +2046,24 @@ button:hover,
 
 /* Hamburger Button Modern Look */
 .hamburger {
-  display: none;
+    display: none;
 }
 @media (max-width: 700px) {
-  .hamburger {
-    display: block;
-    position: fixed;
-    top: 18px;
-    left: 18px;
-    z-index: 2100;
-  }
+    .hamburger {
+        display: block;
+        position: fixed;
+        top: 18px;
+        left: 18px;
+        z-index: 2100;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+        padding: 8px;
+        width: 40px;
+        height: 40px;
+    }
+    .dashboard-title {
+        margin-left: 0;
+        margin-top: 60px; /* Pushes the title down so it's not covered */
+    }
 }
